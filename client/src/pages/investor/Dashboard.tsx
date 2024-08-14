@@ -13,6 +13,8 @@ import { numberWithCommas } from '../../common/utils/utils'
 import { useNavigate } from 'react-router-dom'
 import { getInvestment } from '../../features/investment/helpers/investmentApiHelpers'
 import { PortfolioDto } from '../../../../common/investmentTypes'
+import useAppLoaded from '../common/hooks/useApploaded'
+import LoadingSpinner from '../../common/components/LoadingSpinner'
 
 
 
@@ -123,15 +125,21 @@ const DashboardActions: React.FC = () => {
   )
 }
 
-const Dashboard: React.FC<{username:string,id:number}> = ({username,id}) => {
-  
+const Dashboard: React.FC<{username: string; id: number}> = ({username, id}) => {
+  const isLoaded = useAppLoaded();
+
   return (
-    <>
-      <DashboardHeader username={username} id={id} />
-      <DashboardActions />
-      <Transactions id={id} />
-      <MiniFooter />
-    </>
-  )
+    !isLoaded ? (
+      <LoadingSpinner fullheight />
+    ) : (
+      <>
+        <DashboardHeader username={username} id={id} />
+        <DashboardActions />
+        <Transactions id={id} />
+        <MiniFooter />
+      </>
+    )
+  );
 };
-export default Dashboard
+
+export default Dashboard;
