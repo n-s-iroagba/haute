@@ -60,8 +60,6 @@ const VerifyEmail = () => {
       const verificationStatus = localStorage.getItem('cassockVerified')
      
       if (verificationStatus){
-        localStorage.removeItem('cassockVerified')
-        localStorage.removeItem('cassockEmailVerificationToken')
         
         navigate(`/already-verified/${email}`)
        

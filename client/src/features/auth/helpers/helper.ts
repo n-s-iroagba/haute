@@ -36,6 +36,8 @@ export const getLoginDecodedToken = (): DecodedLoginToken | null => {
 export const logOut = (navigate:(path:string)=>void)=>{
     localStorage.removeItem('cassockJwtToken')
     localStorage.removeItem('cassockId')
+    localStorage.removeItem('cassockVerified')
+    localStorage.removeItem('cassockEmailVerificationToken')
     localStorage.removeItem('cassockInvestment');
 
    navigate('/')
