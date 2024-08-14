@@ -49,7 +49,7 @@ const Transactions: React.FC<{id:number}> = ({id}) => {
     <LoadingSpinner primaryBackground/>
   ) : (
     <div className='px-3 mt-2'>
-      {transactions?.length ? (
+      {!transactions?.length ? (
         <h5 className='text-center'>No Transactions yet.</h5>
       ) : (
         displayedItems.map((transaction:TransactionDto) => (
