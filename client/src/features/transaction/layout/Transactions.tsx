@@ -28,9 +28,11 @@ const Transactions: React.FC<{id:number}> = ({id}) => {
 
   const handleNext = () => {
     if(transactions){
+      if(transactions.length){
     if (currentIndex + itemsPerPage < (transactions.length||0)) {
       setCurrentIndex(currentIndex + itemsPerPage);
     }
+  }
   };
 }
 

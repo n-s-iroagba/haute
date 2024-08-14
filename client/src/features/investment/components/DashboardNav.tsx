@@ -26,7 +26,7 @@ export const DashboardBar: React.FC<{ username: string,id:number }> = (props) =>
         
         
         const notifs = await getNotifications(props.id)
-         setNumberOfNewNotifications(notifs.length||0)
+         notifs.length && setNumberOfNewNotifications(notifs.length||0)
 
         setNotifications(notifs);
       
