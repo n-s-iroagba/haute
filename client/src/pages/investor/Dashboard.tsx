@@ -129,17 +129,21 @@ const Dashboard: React.FC<{username: string; id: number}> = ({username, id}) => 
   const isLoaded = useAppLoaded();
 
   return (
-    !isLoaded ? (
+    <>
+   { !isLoaded ? (
       <LoadingSpinner fullheight />
     ) : (
       <>
         <DashboardHeader username={username} id={id} />
         <DashboardActions />
         <Transactions id={id} />
-        <MiniFooter />
       </>
     )
+  }
+    <MiniFooter />
+       </>
   );
+  
 };
 
 export default Dashboard;
