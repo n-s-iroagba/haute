@@ -28,7 +28,7 @@ const Transactions: React.FC<{id:number}> = ({id}) => {
 
   const handleNext = () => {
     if(transactions){
-      if(transactions.length){
+      if(transactions?.length){
     if (currentIndex + itemsPerPage < (transactions?.length||0)) {
       setCurrentIndex(currentIndex + itemsPerPage);
     }
@@ -49,7 +49,7 @@ const Transactions: React.FC<{id:number}> = ({id}) => {
     <LoadingSpinner primaryBackground/>
   ) : (
     <div className='px-3 mt-2'>
-      {transactions.length ? (
+      {transactions?.length ? (
         <h5 className='text-center'>No Transactions yet.</h5>
       ) : (
         displayedItems.map((transaction:TransactionDto) => (
@@ -63,9 +63,9 @@ const Transactions: React.FC<{id:number}> = ({id}) => {
           </button>
         )}
         <span>
-          {`${currentIndex + 1} - ${Math.min(currentIndex + itemsPerPage, transactions.length)} of ${transactions.length}`}
+          {`${currentIndex + 1} - ${Math.min(currentIndex + itemsPerPage, transactions?.length)} of ${transactions?.length}`}
         </span>
-        {currentIndex + itemsPerPage < transactions.length && (
+        {currentIndex + itemsPerPage < transactions?.length && (
           <button className='background-secondary text-light border-0' onClick={handleNext}>
             Next &rarr;
           </button>
