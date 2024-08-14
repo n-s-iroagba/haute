@@ -16,8 +16,6 @@ import { markNotificationsAsRead } from '../helpers/notificationHelpers';
 export const DashboardBar: React.FC<{ username: string,id:number }> = (props) => {
   const [modalShow, setModalShow] = useState(false);
  const [notifications,setNotifications] = useState<NotificationDto[]>([])
-
-
  const [ numberOfNewNotifications,setNumberOfNewNotifications] = useState(0)
 
   useEffect(() => {
@@ -26,7 +24,7 @@ export const DashboardBar: React.FC<{ username: string,id:number }> = (props) =>
         
         
         const notifs = await getNotifications(props.id)
-         notifs.length && setNumberOfNewNotifications(notifs.length||0)
+         notifs.length && setNumberOfNewNotifications(notifs?.length||0)
 
         setNotifications(notifs);
       
