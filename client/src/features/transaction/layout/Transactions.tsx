@@ -28,7 +28,7 @@ const Transactions: React.FC<{id:number}> = ({id}) => {
 
   const handleNext = () => {
     if(transactions){
-    if (currentIndex + itemsPerPage < transactions.length) {
+    if (currentIndex + itemsPerPage < (transactions.length||0)) {
       setCurrentIndex(currentIndex + itemsPerPage);
     }
   };
@@ -47,7 +47,7 @@ const Transactions: React.FC<{id:number}> = ({id}) => {
     <LoadingSpinner primaryBackground/>
   ) : (
     <div className='px-3 mt-2'>
-      {transactions.length === 0 ? (
+      {transactions.length ? (
         <h5 className='text-center'>No Transactions yet.</h5>
       ) : (
         displayedItems.map((transaction:TransactionDto) => (

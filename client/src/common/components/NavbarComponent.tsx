@@ -30,7 +30,7 @@ const handleToggele =()=>{
       className={`bg-body-tertiary ${isLargeScreen ? '' : 'px-4'}`}
     >  
      {(isIconDisplay&&!isLargeScreen) && <div onClick={()=>navigate('/signup') }><FontAwesomeIcon icon = {faUser}/></div>}
-        <Navbar.Brand><Logo logoImage={blacklogo}/></Navbar.Brand>
+        <Navbar.Brand onClick={()=>navigate('/')}><Logo logoImage={blacklogo}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto ">

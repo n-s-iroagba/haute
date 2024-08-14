@@ -68,11 +68,7 @@ const Footer = () => {
         </Row>
         <Row>
             <Col xs={12}>
-<<<<<<< HEAD
-            <p className="text-center">Copyright 2024 – Cassock</p>
-=======
             <p className="text-center">Copyright 2024 – Haute Equity</p>
->>>>>>> 0d01e79 (initial commit)
             </Col>
             </Row>
       

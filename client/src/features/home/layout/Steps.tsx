@@ -29,11 +29,7 @@ const Steps: React.FC = () => {
               <Information head='Start Investing' text='by selecting a dedicated fund manager to oversee your account.' icon={faBank}/>
             </Col>
             <Col lg={12}>
-<<<<<<< HEAD
-              <Information head='Fund your account' text='via multiple crypto exchanges including Coinbase,Trustwallet etc.' icon={faWallet} />
-=======
               <Information head='Fund your account' text='via Paypal, CashApp, ands multiple crypto exchanges including Coinbase,Trustwallet etc.' icon={faWallet} />
->>>>>>> 0d01e79 (initial commit)
             </Col>
             
           </Row>
