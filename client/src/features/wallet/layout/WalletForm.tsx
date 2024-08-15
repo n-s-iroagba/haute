@@ -106,7 +106,7 @@ const WalletForm: React.FC = () => {
           />
           </Form.Group>
         <Form.Group className="mb-3" controlId="validationFormik04">
-          <Form.Label>Indentification {required}</Form.Label>
+          <Form.Label>Indentification  {required}</Form.Label>
           <Form.Control
             required
             type="text"
@@ -119,7 +119,7 @@ const WalletForm: React.FC = () => {
         </Form.Group>
         
         {readOnly && <Form.Group className="mb-4" as={Col} controlId="validationFormik01">
-          <Form.Label className="mb-0">Currency{required}</Form.Label>
+          <Form.Label className="mb-0">Currency and blockchain in brackets{required}</Form.Label>
           <Form.Control
             required
             type="text"

@@ -190,9 +190,9 @@ const NewInvestmentForm: React.FC<{ username: string, id: number }> = ({ usernam
        {   investmentData.wallet.depositMeans === 'CRYPTOCURRENCY' && (
       <>
         <Form.Group className="mb-1" controlId="validationFormik04">
-          <Form.Label>Crypto Currency{required}</Form.Label>
+          <Form.Label>Preferred Crypto Currency and blochain in brackets{required}</Form.Label>
           <Form.Select onChange={handleCurrencyChange} value={investmentData.wallet.currency || ''}>
-            <option value="">Select Deposit Crypto Currency...</option>
+            <option value="">Select Deposit Crypto Currency (the blockchain is in brackets)</option>
             {wallets
               .filter(wallet => 
                 wallet.identificationType === 'CRYPTOCURRENCY WALLET' && 

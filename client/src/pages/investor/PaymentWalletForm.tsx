@@ -40,7 +40,7 @@ const navigate = useNavigate()
 
   return (
     <div className='d-flex flex-column pt-3 align-items-center'>
-      <Information center head={'Proceed to make your deposit'} text={'Copy the wallet address and make a transfer, be sure to take note of the currency, in order not to loose your deposit'} icon={faDollarSign} />
+      <Information center head={'Proceed to make your deposit'} text={'Copy the wallet address and make a transfer, be sure to take note of the *CURRENCY AND BLOCKCHAIN*, in order not to loose your deposit'} icon={faDollarSign} />
       <Form className="form py-5">
         <Form.Group className='mb-4'>
           <Form.Label>Currency:</Form.Label>
@@ -58,6 +58,18 @@ const navigate = useNavigate()
 
           />
         </Form.Group>
+        {
+          wallet.depositMeans === 'CRYPTOCURRENCY' && 
+          <Form.Group className='mb-4'>
+          <Form.Label>Take note of the currency and Blockchain which is in brackets</Form.Label>
+          <FormControl
+            value={wallet.currency}
+            className='px-0 text-center text-light custom-input bg-transparent form-control'
+
+          />
+        </Form.Group>
+        }
+
         <Form.Group  className='mb-4'>
           <Form.Label>Copy Payment {wallet.identificationType}</Form.Label>
           <Form.Control
