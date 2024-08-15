@@ -43,7 +43,7 @@ const AdminWalletLayout = () => {
         {walletToBeEdited && <EditWalletModal data={walletToBeEdited} show={showModal} />}
         <Row className='d-flex justify-content-center gx-2'>
           {wallets.map((wallet, index) => (
-            <Col className=' d-flex justify-content-center' xs={1} md={4}>
+            <Col className=' d-flex justify-content-center' xs={12} md={4}>
             <WalletCard
               key={wallet.id}
               currency={wallet.currency}
