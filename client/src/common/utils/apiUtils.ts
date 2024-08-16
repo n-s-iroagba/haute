@@ -63,11 +63,9 @@ export const getData = async (url: string) => {
     'Content-Type': 'application/json'
   };
 
-  if (authorizationData === null) {
-    throw new Error('Authorization data is null, not allowed to make this request');
-  }
 
-  headers['Authorization'] = authorizationData;
+
+  headers['Authorization'] = authorizationData||'';
 
   try {
     const response: AxiosResponse<any> = await axios.get(url, { headers });
