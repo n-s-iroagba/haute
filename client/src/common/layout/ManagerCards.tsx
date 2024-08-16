@@ -16,7 +16,7 @@ const ManagerCards: React.FC<{ text?: string }> = ({ text }) => {
         <h3 className="text-center mt-4">{text}</h3>
         {text && <div className="primary-line mb-4" />}
       </div>
-      <Row className="gx-2 gy-2 d-flex justify-content-center">
+      <Row className="gx-3 gy-3 px-3 d-flex justify-content-center">
         {managers.map((manager: ManagerDto) => (
           <Col key={manager.id} xs={12} md={6} lg={3}>
             <ManagerCard

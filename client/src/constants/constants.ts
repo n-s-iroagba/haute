@@ -7,8 +7,6 @@ export const socialMediaLink = 'https://facebook.com/HauteEquity'
 export const clientDomain= 'https://hauteequity.com'
 export const companySupportEmail = 'hauteequity@gmail.com'
 
-
-
 export const createAdminUrl = `${domain}/create-admin`
 export const createInvestorUrl  = `${domain}/create-investor`
 export const payReferralRoute = `${domain}/pay-refferal`
