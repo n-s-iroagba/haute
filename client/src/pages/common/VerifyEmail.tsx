@@ -59,7 +59,7 @@ const VerifyEmail = () => {
       setCounter((prevCounter) => Math.max(0, prevCounter - 1));
       const verificationStatus = localStorage.getItem('cassockVerified')
      
-      if (verificationStatus){
+      if (verificationStatus!==null) {
         localStorage.removeItem('cassockVerified')
         alert( localStorage.getItem('cassockVerified'))
         localStorage.removeItem('cassockEmailVerificationToken')
