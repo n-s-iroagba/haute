@@ -61,7 +61,6 @@ const VerifyEmail = () => {
      
       if (verificationStatus!==null) {
         localStorage.removeItem('cassockVerified')
-        alert( localStorage.getItem('cassockVerified'))
         localStorage.removeItem('cassockEmailVerificationToken')
        
         navigate(`/already-verified/${email}`)
@@ -101,8 +100,8 @@ const VerifyEmail = () => {
       {counter > 0 ? (
         <>
           <Information head='Verify your Email Address' text="Kindly open your registration email ON THIS DEVICE, and verify your email address." icon={faMailchimp} center />
-          <p className='py-0 text-nowrap mb-3'>Mail token will expire in {formatTime(counter)} seconds</p>
-          <small>Haven't received token yet, resend mail.</small>
+          <p className='text-center py-0 text-nowrap mb-3'>Mail token will expire in {formatTime(counter)} seconds</p>
+          <small className='text-center'>Haven't received token yet, resend mail.</small>
         </>
       ) : (
 
