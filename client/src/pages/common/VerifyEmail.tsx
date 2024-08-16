@@ -60,8 +60,10 @@ const VerifyEmail = () => {
       const verificationStatus = localStorage.getItem('cassockVerified')
      
       if (verificationStatus){
-        localStorage.removeItem('cassockEmailVerificationToken')
         localStorage.removeItem('cassockVerified')
+        alert( localStorage.getItem('cassockVerified'))
+        localStorage.removeItem('cassockEmailVerificationToken')
+       
         navigate(`/already-verified/${email}`)
       }
     }, 1000);
@@ -98,7 +100,7 @@ const VerifyEmail = () => {
     <div className="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
       {counter > 0 ? (
         <>
-          <Information head='Verify your Email Address' text="Kindly open your registration email and verify email address." icon={faMailchimp} center />
+          <Information head='Verify your Email Address' text="Kindly open your registration email ON THIS DEVICE, and verify your email address." icon={faMailchimp} center />
           <p className='py-0 text-nowrap mb-3'>Mail token will expire in {formatTime(counter)} seconds</p>
           <small>Haven't received token yet, resend mail.</small>
         </>
