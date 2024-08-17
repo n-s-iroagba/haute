@@ -8,7 +8,7 @@ import '../../common/styles/styles.css'
 const NewInvestment: React.FC<{ username: string, id: number }> = ({ username, id }) => {
 
     return (
-        <div className='px-4 py-4 d-flex flex-column align-items-center'>
+        <div className='px-1 py-4 d-flex flex-column align-items-center'>
             <div className='auth-page-items'>
 
                 <Information center={true} text='Fill the form below to get started.' head='Create a portfolio' icon={faHandHoldingDollar} />
