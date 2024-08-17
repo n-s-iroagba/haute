@@ -82,6 +82,10 @@ export const AuthContextProvider: React.FC<{ children: ReactNode }> = ({
         ? data.secretCode === process.env.REACT_APP_ADMIN_SECRET_KEY
         : true;
     setValidated(true)
+    if(investorData.dateOfBirth===""){
+      setErrorMessage('Date of birth field is required')
+      return;
+     }
     if (
       form.checkValidity() === false ||
       passwordValidityMessage.length ||
@@ -89,7 +93,7 @@ export const AuthContextProvider: React.FC<{ children: ReactNode }> = ({
       !secretCodeMatch
 
     ) {
-
+  
       if ("secretCode" in data && !secretCodeMatch) {
         setErrorMessage("The secret code provided is wrong.");
       }else{
@@ -116,8 +120,7 @@ export const AuthContextProvider: React.FC<{ children: ReactNode }> = ({
       const code = extractErrorCode(error.message);
       if (code === 409) {
       setErrorMessage('user with this email already exists')
-
-       }else {
+       }else{
         setErrorMessage('Our server is currently down. Please try again later.');
       }
     } finally {
