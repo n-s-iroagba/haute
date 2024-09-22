@@ -82,10 +82,11 @@ export const AuthContextProvider: React.FC<{ children: ReactNode }> = ({
         ? data.secretCode === process.env.REACT_APP_ADMIN_SECRET_KEY
         : true;
     setValidated(true)
-    if(investorData.dateOfBirth===""){
-      setErrorMessage('Date of birth field is required')
+    if (!("secretCode" in data) && investorData.dateOfBirth === "") {
+      setErrorMessage('Date of birth field is required');
       return;
-     }
+    }
+    
     if (
       form.checkValidity() === false ||
       passwordValidityMessage.length ||
