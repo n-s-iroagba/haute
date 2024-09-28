@@ -22,7 +22,7 @@ const Notifications:React.FC<{id:number}> =({id}) =>{
       try {
         
         
-        const notifs = await getNotifications(1)
+        const notifs = await getNotifications(id)
 
         setNotifications(notifs);
       
@@ -32,7 +32,7 @@ const Notifications:React.FC<{id:number}> =({id}) =>{
     };
 
     fetchNotifications();
-  }, []);
+  }, [id]);
  
     return(
       <div className='primary-background'>

@@ -47,7 +47,7 @@ const DashboardHeader: React.FC <{username:string,id:number}> = ({username,id}) 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const investment = await getInvestment(1);
+        const investment = await getInvestment(id);
         if (investment.status === 200 && investment.data) {
           console.log('earnings',investment.data.investment.earnings);
           setEarnings(investment.data.investment.earnings)
@@ -60,7 +60,7 @@ const DashboardHeader: React.FC <{username:string,id:number}> = ({username,id}) 
       }
     }
     fetchData();
-  }, []);
+  }, [id]);
   const amount = earnings+amountInvested
  
   return (
