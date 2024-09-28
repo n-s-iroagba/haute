@@ -2,13 +2,17 @@ import React from 'react';
 import { Accordion, Card } from 'react-bootstrap';
 import '../../../common/styles/styles.css'
 
-const InvestorsCard: React.FC<{ amountDeposited:number,firstName: string, lastName: string ,deleteButton:any,amount:number,date?:string}> = ({ 
+const InvestorsCard: React.FC<{ amountDeposited:number,
+  sendMailButton:any,
+  firstName: string, lastName: string ,deleteButton:any,addInvestmentButton:any,amount:number,date?:string}> = ({ 
    lastName,
   amount,
   firstName,
      
      amountDeposited,
      date,
+     addInvestmentButton,
+     sendMailButton,
      deleteButton}) => {
       const withdrawalDate = date?new Date(new Date(date).setDate(new Date(date).getDate() + 14)).toLocaleDateString():'Has Not invested'
   return (
@@ -23,6 +27,8 @@ const InvestorsCard: React.FC<{ amountDeposited:number,firstName: string, lastNa
              {amountDeposited>0 && date && <Card.Text>Withdrawal Date: {withdrawalDate} </Card.Text>}
             </Card.Body> 
           </Card>
+          <div className='d-flex justify-content-center mt-3'>{sendMailButton}</div>
+          <div className='d-flex justify-content-center mt-3'>{addInvestmentButton}</div>
          <div className='d-flex justify-content-center mt-3'>{deleteButton}</div>
         </Accordion.Body>
         </Accordion.Item>

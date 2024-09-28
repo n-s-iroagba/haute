@@ -1,6 +1,6 @@
 
 import { getData, patchItem, postData  } from "../../../common/utils/apiUtils";
-import { createInvestmentRoute, getInvestmentRoute, getInvestmentStatusRoute, payUrl  } from "../../../constants/constants";
+import { createInvestmentRoute, getInvestmentRoute, getInvestmentStatusRoute, payUrl, payWithIdUrl  } from "../../../constants/constants";
 
 import { PayInvestorDto } from "../../../../../common/investmentTypes";
 import { extractErrorCode } from "../../../common/utils/utils";
@@ -59,6 +59,27 @@ export const createInvestment = async (data:CreateInvestmentDto,investorId:numbe
   export const creditInvestment =async (data:PayInvestorDto) =>{
     try {
       const response = await patchItem(payUrl,data);
+      if (response.status === 200) {
+        alert('investment deposit successfully added succesfully')
+        window.location.reload();
+    }
+  }catch (error:any) {
+   console.error(error)
+   const code = extractErrorCode(error.message);
+    if (code === 400){
+      alert('Some fields are missing, kindly fill the form properly and retry')
+    }
+   else {
+    alert('unable to add investment amount at this time')
+   }
+  }
+  }
+
+    
+  export const creditInvestmentWithId =async (id:number,data:{amount:number}) =>{
+    const url = `${payWithIdUrl}/${id}`
+    try {
+      const response = await patchItem(url,data);
       if (response.status === 200) {
         alert('investment deposit successfully added succesfully')
         window.location.reload();

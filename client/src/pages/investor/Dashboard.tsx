@@ -8,7 +8,6 @@ import { logOut } from '../../features/auth/helpers/helper'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CircularButton from '../../features/investor/components/CircularButton'
-import Transactions from '../../features/transaction/layout/Transactions'
 import { numberWithCommas } from '../../common/utils/utils'
 import { useNavigate } from 'react-router-dom'
 import { getInvestment } from '../../features/investment/helpers/investmentApiHelpers'
@@ -136,7 +135,7 @@ const Dashboard: React.FC<{username: string; id: number}> = ({username, id}) => 
       <>
         <DashboardHeader username={username} id={id} />
         <DashboardActions />
-        <Transactions id={id} />
+        {/* <Transactions id={id} /> */}
       </>
     )
   }

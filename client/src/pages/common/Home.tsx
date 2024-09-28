@@ -19,6 +19,9 @@ import PromoAdvert from "../../features/home/layout/PromoAdvert";
 import NavbarComponent from "../../common/components/NavbarComponent";
 import useAppLoaded from "./hooks/useApploaded";
 import LoadingSpinner from "../../common/components/LoadingSpinner";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTelegram } from "@fortawesome/free-brands-svg-icons";
+
 const Home: React.FC = () => {
 
 
@@ -35,6 +38,15 @@ const Home: React.FC = () => {
           <TickerTape colorTheme="light" />
           <Introduction />
           <SecurityAssurance />
+          <div className="telegram-icon">
+          <div className="px-2 py-2 d-flex flex-column align-items-center bg-light">
+          <small className="text-center">Need Help ?</small>
+            <small className="text-center">Chat us on Telegram</small>
+            <a href="https://t.me/Austinmiller_tme" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon size="xl" color="blue" icon={faTelegram}/>
+            </a>
+          </div>
+          </div>
           <Counter />
           <Testimonial />
           <Awards />

@@ -433,3 +433,8 @@ div .card-primary-background {
 .small-font {
   font-size: x-small;
 }
+.telegram-icon{
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+}

@@ -7,6 +7,8 @@ import MiniFooter from '../../common/components/MiniFooter';
 import '../../common/styles/styles.css'
 import InvestorsCard from '../../features/investor/components/InvestorsCard';
 import { getInvestors } from '../../features/investor/helpers/investorHelpers';
+import CreditInvestorModalWithId from '../../features/investment/components/CreditInvestorModalWithId';
+import EmailModal from '../../features/investor/components/EmailModal';
 
 
 
@@ -15,6 +17,11 @@ const Investors = () => {
   const [idToBeDeleted, setIdToBeDeleted] = useState(0)
 const [showDeleteModal,setShowDeleteModal]= useState(false)
 const [investorData, setInvestorData] = useState<any>([])
+const [showAddModal, setShowAddModal] = useState(false)
+const [idToBeCredited, setIdToBeCredited] = useState(0)
+const [showMailModal, setShowMailModal] = useState(false)
+const [mailId, setMailId] = useState(0)
+const [name, setName] = useState('')
 useEffect(() => {
   const fetchInvestorData = async () => {
     try {
@@ -31,7 +38,18 @@ useEffect(() => {
 const handleDelete =(id:number) =>{
 setShowDeleteModal(true)
 setIdToBeDeleted(id)
+}
 
+const handleAdd =(id:number,name:string) =>{
+  setShowAddModal(true)
+  setIdToBeCredited(id)
+  setName(name)
+}
+
+const handleMail =(id:number,name:string) =>{
+  setShowMailModal(true)
+  setMailId(id)
+  setName(name)
 }
 
   return (
@@ -47,13 +65,22 @@ setIdToBeDeleted(id)
             amount={data.investment.amount}
             date={data.investment.investmentDate}
             amountDeposited={data.investment.amountDeposited}
-            deleteButton={<button className='red-button button-width-narrow' onClick={() => handleDelete(data.investor.id)}>Delete</button>}       />
+            addInvestmentButton={<button className='button-styles button-width-narrow' onClick={
+              () => handleAdd(data.investor.id,`${data.investor.firstName} ${data.investor.lastName}`)
+            }>Add Investor Funds</button>}
+          sendMailButton={<button className='button-styles button-width-narrow' onClick={
+              () => handleMail(data.investor.id,`${data.investor.firstName} ${data.investor.lastName}`)
+            }>Send Email</button>}
+            deleteButton={<button className='red-button button-width-narrow' onClick={() => handleDelete(data.investor.id)}>Delete</button>}
+            />
         </Col>
       )):
       <h2 className='text-center text-light'>No Investors...</h2>
       }
     </Row>
     <DeleteModal id={idToBeDeleted} show={showDeleteModal} entity='investor'/>
+    <CreditInvestorModalWithId show={showAddModal} id={idToBeCredited} name={name}/>
+    <EmailModal show={showMailModal} id={mailId} name={name}/>
     </div>
     <MiniFooter primaryVariant/>
     </div>
