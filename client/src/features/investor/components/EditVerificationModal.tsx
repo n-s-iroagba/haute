@@ -65,7 +65,7 @@ const EditVerificationModal: React.FC<EditVerificationModalProps> = ({ show, han
       <Form onSubmit={handleSubmit}>
         <Modal.Body>
           <Form.Group className="mb-3">
-            <Form.Label>Verification Fee</Form.Label>
+            <Form.Label>Verification Fee Amount</Form.Label>
             <Form.Control
               type="number"
               value={verificationFee}
@@ -74,8 +74,8 @@ const EditVerificationModal: React.FC<EditVerificationModalProps> = ({ show, han
             />
           </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Verification Fee Account</Form.Label>
+          {/* <Form.Group className="mb-3">
+            <Form.Label>Verification Fee Account(e.g the wallet address or cashapp tag)</Form.Label>
             <Form.Control
               type="text"
               value={verificationFeeAccount}
@@ -92,7 +92,7 @@ const EditVerificationModal: React.FC<EditVerificationModalProps> = ({ show, han
               onChange={(e) => setVerificationFeeAmountType(e.target.value)}
               placeholder="Enter verification the details according to the format above"
             />
-          </Form.Group>
+          </Form.Group> */}
         </Modal.Body>
 
         <Modal.Footer>
