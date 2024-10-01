@@ -47,7 +47,7 @@ const EditVerificationModal: React.FC<EditVerificationModalProps> = ({ show, han
 
     try {
       // Send PUT request to update the verification details
-      await axios.put(`${domain}/investor/${id}/verification`, updatedData);
+      await axios.patch(`${domain}/investor/${id}/verification`, updatedData);
       alert('Verification details updated successfully');
       handleClose(); // Close the modal after submission
     } catch (error) {
