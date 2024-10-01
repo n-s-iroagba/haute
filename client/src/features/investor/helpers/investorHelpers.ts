@@ -1,5 +1,5 @@
 import { deleteItem, getData, postData } from "../../../common/utils/apiUtils";
-import { deleteInvestorRoute, emailRoute, getInvestorsUrl } from "../../../constants/constants";
+import { deleteInvestorRoute, emailRoute, getInvestorsUrl, getInvestorUrl } from "../../../constants/constants";
 
 export const getInvestors = async ()=>{
     const url = getInvestorsUrl
@@ -9,6 +9,19 @@ export const getInvestors = async ()=>{
       return response.data
      }
        return   []
+  }
+  export const getInvestor = async (id:number)=>{
+    const url = `${getInvestorUrl}/${id}`
+   try{
+     const response = await getData(url)
+     if (response.status ===200){
+      return response
+     }
+    }catch(error:any){
+    console.error(error)
+    alert('sorry an error occured, please try again')
+  }
+    
   }
 
 

@@ -48,7 +48,7 @@ export const ManagerCard: React.FC<ManagerCardProps> = ({
           <div className="w-100 ">
             <Card.Text className='text-center mb-1'>{qualification}</Card.Text>
             <Card.Text className='d-flex  align-items-center mb-0'><span className=' card-label-width-wide' >Minimum Deposit:</span> <span >${minimumInvestmentAmount}</span></Card.Text>
-            <Card.Text className='d-flex align-items-center mb-0'><span className='card-label-width-wide ' >Investment Period:</span> <span >{duration + ' '} weeks</span></Card.Text>
+            <Card.Text className='d-flex align-items-center mb-0'><span className='card-label-width-wide ' >Investment Period:</span> <span >{duration + ' '} days</span></Card.Text>
           </div>
         </div>
         <div className="w-100 d-flex justify-content-center mtle-2"><div className="w-75">{button}</div></div>

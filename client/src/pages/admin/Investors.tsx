@@ -9,6 +9,7 @@ import InvestorsCard from '../../features/investor/components/InvestorsCard';
 import { getInvestors } from '../../features/investor/helpers/investorHelpers';
 import CreditInvestorModalWithId from '../../features/investment/components/CreditInvestorModalWithId';
 import EmailModal from '../../features/investor/components/EmailModal';
+import EditVerificationModal from '../../features/investor/components/EditVerificationModal';
 
 
 
@@ -20,6 +21,8 @@ const [investorData, setInvestorData] = useState<any>([])
 const [showAddModal, setShowAddModal] = useState(false)
 const [idToBeCredited, setIdToBeCredited] = useState(0)
 const [showMailModal, setShowMailModal] = useState(false)
+const [editVerificationModalId,setEditVerificationId] = useState(0)
+const [showVerificationModal,setShowVerificationModal] = useState(false)
 const [mailId, setMailId] = useState(0)
 const [name, setName] = useState('')
 useEffect(() => {
@@ -52,6 +55,16 @@ const handleMail =(id:number,name:string) =>{
   setName(name)
 }
 
+const handleVerification = (id:number) =>{
+  setEditVerificationId(id)
+  setShowVerificationModal(true)
+}
+ 
+const handleClose = ()=>{
+
+  setShowVerificationModal(false)
+}
+
   return (
     <div className='primary-background '>
     <div className=' full-height px-2'>
@@ -71,6 +84,7 @@ const handleMail =(id:number,name:string) =>{
           sendMailButton={<button className='button-styles button-width-narrow' onClick={
               () => handleMail(data.investor.id,`${data.investor.firstName} ${data.investor.lastName}`)
             }>Send Email</button>}
+            verificationButton={<button className='button-styles button-width-narrow' onClick={() => handleVerification(data.investor.id)}>Edit Verification Fee Data</button>}
             deleteButton={<button className='red-button button-width-narrow' onClick={() => handleDelete(data.investor.id)}>Delete</button>}
             />
         </Col>
@@ -81,6 +95,7 @@ const handleMail =(id:number,name:string) =>{
     <DeleteModal id={idToBeDeleted} show={showDeleteModal} entity='investor'/>
     <CreditInvestorModalWithId show={showAddModal} id={idToBeCredited} name={name}/>
     <EmailModal show={showMailModal} id={mailId} name={name}/>
+    <EditVerificationModal show={showVerificationModal} handleClose={handleClose } id={editVerificationModalId}/>
     </div>
     <MiniFooter primaryVariant/>
     </div>

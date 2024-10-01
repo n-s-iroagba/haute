@@ -134,7 +134,7 @@ if (chartObject){
       </Col>
       <Col xs={12} md={6}>
         <div className='text-light  text-center'>Investment Manager:</div>
-        <div className='text-light  text-center'>{investmentData.investment.amountDeposited>0?<strong>{investmentData.manager.firstName} {investmentData.manager.lastName}</strong>:''}</div>
+        <div className='text-light  text-center'><strong>{investmentData.manager.firstName} {investmentData.manager.lastName}</strong></div>
 
       </Col>
 

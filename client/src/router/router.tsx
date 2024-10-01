@@ -8,7 +8,7 @@ import VerifyEmail from "../pages/common/VerifyEmail";
 import Email from "../pages/common/Email";
 import NewPassword from "../pages/common/NewPassword";
 import Dashboard from "../pages/investor/Dashboard";
-import WithdrawalDashboard from "../features/investor/components/WithdrawalDashboard";
+
 import InvestorsDashboard from "../pages/admin/InvestorDashboard";
 import CheckMail from "../pages/common/CheckMail";
 import InvestmentManagers from "../pages/investor/InvestmentManagers";
@@ -33,6 +33,7 @@ import AlreadyVerified from "../pages/common/AlreadyVerified";
 import PrivateRoute from "../wrappers/PrivateRoute";
 import Bonus from "../pages/admin/Bonus";
 import AdminPrivateRoute from "../wrappers/AdminPrivateRoute";
+import WithdrawalDashboard from "../pages/investor/WithdrawalDashboard";
 
 export const router = createBrowserRouter([
 

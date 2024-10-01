@@ -9,6 +9,7 @@ import '../../common/styles/styles.css'
 
 
 
+
 const InvestorsDashboard = () => {
   const [addInvestementShow, setAddInvestmentShow] = useState<boolean>(false)
 
@@ -36,6 +37,7 @@ const InvestorsDashboard = () => {
       </div>
       <MiniFooter primaryVariant />
       <CreditInvestorModal show={addInvestementShow} />
+  
     </div>
   )
 }

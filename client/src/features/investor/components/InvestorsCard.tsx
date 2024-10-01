@@ -4,7 +4,9 @@ import '../../../common/styles/styles.css'
 
 const InvestorsCard: React.FC<{ amountDeposited:number,
   sendMailButton:any,
-  firstName: string, lastName: string ,deleteButton:any,addInvestmentButton:any,amount:number,date?:string}> = ({ 
+  firstName: string, lastName: string ,deleteButton:any,
+  verificationButton:any,
+  addInvestmentButton:any,amount:number,date?:string}> = ({ 
    lastName,
   amount,
   firstName,
@@ -13,6 +15,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
      date,
      addInvestmentButton,
      sendMailButton,
+     verificationButton,
      deleteButton}) => {
       const withdrawalDate = date?new Date(new Date(date).setDate(new Date(date).getDate() + 14)).toLocaleDateString():'Has Not invested'
   return (
@@ -27,6 +30,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
              {amountDeposited>0 && date && <Card.Text>Withdrawal Date: {withdrawalDate} </Card.Text>}
             </Card.Body> 
           </Card>
+          <div className='d-flex justify-content-center mt-3'>{verificationButton}</div>
           <div className='d-flex justify-content-center mt-3'>{sendMailButton}</div>
           <div className='d-flex justify-content-center mt-3'>{addInvestmentButton}</div>
          <div className='d-flex justify-content-center mt-3'>{deleteButton}</div>

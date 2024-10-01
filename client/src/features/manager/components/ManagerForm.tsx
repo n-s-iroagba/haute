@@ -242,7 +242,7 @@ const ManagerForm: React.FC<{ patch?: boolean }> = ({ patch }) => {
           />
         </Form.Group>
         <Form.Group className="mb-4" as={Col} controlId="validationFormik04">
-          <Form.Label className="mb-0">Duration of Investment in Weeks {required}</Form.Label>
+          <Form.Label className="mb-0">Duration of Investment in days {required}</Form.Label>
           <Form.Control
             required
             type="number"

@@ -1,6 +1,6 @@
 // import { serverTopUpInvestmentPath } from "../../../common/constants";
 
-const domain = 'https://haute.fly.dev';
+export const domain = 'https://haute.fly.dev';
 
 export const companyName = `Haute Equity`
 export const socialMediaLink = 'https://facebook.com/HauteEquity'
@@ -52,6 +52,7 @@ export const getDueBonusUrl = `${domain}/get-pending-bonus`
 export const getPendingReferralUrl = `${domain}/get-pending-referral`
 
 export const getInvestorsUrl = `${domain}/get-investors`
+export const getInvestorUrl = `${domain}/investore`
 
 export const getNewbiesAdminUrl = `${domain}/get-newbies`
 
