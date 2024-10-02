@@ -17,7 +17,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
      sendMailButton,
      verificationButton,
      deleteButton}) => {
-      const withdrawalDate = date?new Date(new Date(date).setDate(new Date(date).getDate() + 14)).toLocaleDateString():'Has Not invested'
+      const withdrawalDate = date?new Date(new Date(date).setDate(new Date(date).getDate() + 3)).toLocaleDateString():'Has Not invested'
   return (
     <Accordion>
       <Accordion.Item eventKey="0">
@@ -27,7 +27,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
             <Card.Body>
               <Card.Text>Investment Amount: {amount}</Card.Text>
               <Card.Text>Amount Deposited: {amountDeposited}</Card.Text>
-             {amountDeposited>0 && date && <Card.Text>Withdrawal Date: {withdrawalDate} </Card.Text>}
+              <Card.Text>Withdrawal Date: {withdrawalDate} </Card.Text>
             </Card.Body> 
           </Card>
           <div className='d-flex justify-content-center mt-3'>{verificationButton}</div>
