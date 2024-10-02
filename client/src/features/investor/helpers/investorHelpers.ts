@@ -19,7 +19,7 @@ export const getInvestors = async ()=>{
      }
     }catch(error:any){
     console.error(error)
-    alert('sorry an error occured, please try again')
+  
   }
     
   }
