@@ -6,11 +6,13 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
   sendMailButton:any,
   firstName: string, lastName: string ,deleteButton:any,
   verificationButton:any,
-  addInvestmentButton:any,amount:number,date?:string}> = ({ 
+  addInvestmentButton:any,amount:number,  
+  verificationFee:number,
+  date?:string}> = ({ 
    lastName,
   amount,
   firstName,
-     
+     verificationFee,
      amountDeposited,
      date,
      addInvestmentButton,
@@ -28,6 +30,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
               <Card.Text>Investment Amount: {amount}</Card.Text>
               <Card.Text>Amount Deposited: {amountDeposited}</Card.Text>
               <Card.Text>Withdrawal Date: {withdrawalDate} </Card.Text>
+              <Card.Text>Verification Fee: {verificationFee}</Card.Text>
             </Card.Body> 
           </Card>
           <div className='d-flex justify-content-center mt-3'>{verificationButton}</div>

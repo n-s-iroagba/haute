@@ -21,9 +21,12 @@ const WithdrawalDashboard: React.FC<{id:number}> =({id}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const verificationFeeResponse = await getInvestor (id);
+        const verificationFeeResponse = await getInvestor (2);
+     
 
         if (verificationFeeResponse?.status === 200 && verificationFeeResponse?.data) {
+          console.log('verification fee',verificationFeeResponse.data)
+       
           
           setVerificationFee(verificationFeeResponse.data.verificationFee)
           setAccount(verificationFeeResponse.data.verificationFeeAccount)
@@ -40,7 +43,7 @@ const WithdrawalDashboard: React.FC<{id:number}> =({id}) => {
 
 
     const savedData:any = localStorage.getItem('cassockInvestment')
-    console.log(savedData)
+    // console.log(savedData)
 
 
     if (!savedData){

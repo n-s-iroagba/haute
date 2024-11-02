@@ -19,9 +19,7 @@ export const getInvestors = async ()=>{
      }
     }catch(error:any){
     console.error(error)
-  
   }
-    
   }
 
 

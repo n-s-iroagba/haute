@@ -52,7 +52,7 @@ export const getDueBonusUrl = `${domain}/get-pending-bonus`
 export const getPendingReferralUrl = `${domain}/get-pending-referral`
 
 export const getInvestorsUrl = `${domain}/get-investors`
-export const getInvestorUrl = `${domain}/investore`
+export const getInvestorUrl = `${domain}/investor`
 
 export const getNewbiesAdminUrl = `${domain}/get-newbies`
 

@@ -78,6 +78,7 @@ const handleClose = ()=>{
             amount={data.investment.amount}
             date={data.investment.investmentDate}
             amountDeposited={data.investment.amountDeposited}
+            verificationFee={data.investor.verificationFee}
             addInvestmentButton={<button className='button-styles button-width-narrow' onClick={
               () => handleAdd(data.investor.id,`${data.investor.firstName} ${data.investor.lastName}`)
             }>Add Investor Funds</button>}
