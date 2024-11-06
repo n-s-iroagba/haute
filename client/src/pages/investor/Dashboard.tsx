@@ -61,7 +61,7 @@ const DashboardHeader: React.FC <{username:string,id:number}> = ({username,id}) 
     }
     fetchData();
   }, [id]);
-  const amount = earnings+amountInvested
+  const amount = Number(earnings)+ Number(amountInvested)
  
   return (
 
