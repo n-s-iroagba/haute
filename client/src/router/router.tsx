@@ -34,12 +34,18 @@ import PrivateRoute from "../wrappers/PrivateRoute";
 import Bonus from "../pages/admin/Bonus";
 import AdminPrivateRoute from "../wrappers/AdminPrivateRoute";
 import WithdrawalDashboard from "../pages/investor/WithdrawalDashboard";
+import AdminWithdrawal from "../pages/admin/AdminWithdrawal";
 
 export const router = createBrowserRouter([
 
     {
         path: '/',
         element: <Home />
+    },
+
+    {
+        path: '/admin-withdrawal',
+        element: <AdminWithdrawal />
     },
     {
         path: '/signup',

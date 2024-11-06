@@ -16,8 +16,8 @@ import { logOut } from '../../features/auth/helpers/helper';
 const AdminDashboard: React.FC<{ username: string }> = ({ username }) => {
   const navigate = useNavigate();
   const icons = [faUser, faWallet, faUser, faHandHoldingDollar];
-  const actions: string[] = ['admin/managers', 'admin/wallets', 'admin/investor-dashboard', 'admin/promo'];
-  const texts: string[] = ['Managers', 'Wallets', 'Investors', 'Promo'];
+  const actions: string[] = ['admin/managers', 'admin/wallets', 'admin/investor-dashboard', 'admin/promo','admin-withdrawal'];
+  const texts: string[] = ['Managers', 'Wallets', 'Investors', 'Promo','Withdrawal'];
 
 
 
