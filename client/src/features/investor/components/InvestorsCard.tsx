@@ -8,6 +8,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
   verificationButton:any,
   addInvestmentButton:any,amount:number,  
   verificationFee:number,
+  addEarningsButton: any
   date?:string}> = ({ 
    lastName,
   amount,
@@ -18,6 +19,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
      addInvestmentButton,
      sendMailButton,
      verificationButton,
+     addEarningsButton,
      deleteButton}) => {
       const withdrawalDate = date?new Date(new Date(date).setDate(new Date(date).getDate() + 3)).toLocaleDateString():'Has Not invested'
   return (
@@ -34,6 +36,7 @@ const InvestorsCard: React.FC<{ amountDeposited:number,
             </Card.Body> 
           </Card>
           <div className='d-flex justify-content-center mt-3'>{verificationButton}</div>
+          <div className='d-flex justify-content-center mt-3'>{addEarningsButton}</div>
           <div className='d-flex justify-content-center mt-3'>{sendMailButton}</div>
           <div className='d-flex justify-content-center mt-3'>{addInvestmentButton}</div>
          <div className='d-flex justify-content-center mt-3'>{deleteButton}</div>

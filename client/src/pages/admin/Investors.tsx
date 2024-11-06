@@ -10,6 +10,7 @@ import { getInvestors } from "../../features/investor/helpers/investorHelpers";
 import CreditInvestorModalWithId from "../../features/investment/components/CreditInvestorModalWithId";
 import EmailModal from "../../features/investor/components/EmailModal";
 import EditVerificationModal from "../../features/investor/components/EditVerificationModal";
+import CreditEarningsModalWithId from "../../features/investment/components/CreditEarningsModalWithId";
 
 const Investors = () => {
   const [idToBeDeleted, setIdToBeDeleted] = useState(0);
@@ -20,6 +21,7 @@ const Investors = () => {
   const [showMailModal, setShowMailModal] = useState(false);
   const [editVerificationModalId, setEditVerificationId] = useState(0);
   const [showVerificationModal, setShowVerificationModal] = useState(false);
+  const [showEarningsModal,setShowAddEarningsModal] = useState(false);
   const [mailId, setMailId] = useState(0);
   const [name, setName] = useState("");
   useEffect(() => {
@@ -46,6 +48,11 @@ const Investors = () => {
     setName(name);
   };
 
+  const handleAddEarnings = (id: number, name: string) => {
+    setShowAddEarningsModal(true);
+    setIdToBeCredited(id);
+    setName(name);
+  };
   const handleMail = (id: number, name: string) => {
     setShowMailModal(true);
     setMailId(id);
@@ -87,6 +94,20 @@ const Investors = () => {
                       }
                     >
                       Add Investor Funds
+                    </button>
+                  }
+
+                  addEarningsButton={
+                    <button
+                      className="button-styles button-width-narrow"
+                      onClick={() =>
+                        handleAddEarnings(
+                          data.investor.id,
+                          `${data.investor.firstName} ${data.investor.lastName}`
+                        )
+                      }
+                    >
+                      Add Earnings
                     </button>
                   }
                   sendMailButton={
@@ -132,6 +153,11 @@ const Investors = () => {
         />
         <CreditInvestorModalWithId
           show={showAddModal}
+          id={idToBeCredited}
+          name={name}
+        />
+          <CreditEarningsModalWithId
+          show={showEarningsModal}
           id={idToBeCredited}
           name={name}
         />

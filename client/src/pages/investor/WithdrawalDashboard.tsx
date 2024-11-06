@@ -21,7 +21,7 @@ const WithdrawalDashboard: React.FC<{id:number}> =({id}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const verificationFeeResponse = await getInvestor (2);
+        const verificationFeeResponse = await getInvestor (id);
      
 
         if (verificationFeeResponse?.status === 200 && verificationFeeResponse?.data) {

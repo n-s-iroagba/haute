@@ -35,10 +35,11 @@ const AdminDashboard: React.FC<{ username: string }> = ({ username }) => {
 
           </Col>
         ))}
-        <Col xs={12} md={6}>
-          <button className='mt-5 button-styles text-light'onClick={()=>logOut(navigate)}>Logout</button>
-        </Col>
       </Row>
+      <div className='d-flex justify-content-center'>
+      <button className='mt-5 button-styles text-light'onClick={()=>logOut(navigate)}>Logout</button>
+      
+      </div>
     </div>
      <MiniFooter primaryVariant={true} />
      </div>

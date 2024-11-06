@@ -37,7 +37,6 @@ const EditVerificationModal: React.FC<EditVerificationModalProps> = ({ show, han
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     // Prepare the data to send to the backend
     const updatedData = {
       verificationFee,
@@ -47,7 +46,7 @@ const EditVerificationModal: React.FC<EditVerificationModalProps> = ({ show, han
 
     try {
       // Send PUT request to update the verification details
-      await axios.patch(`${domain}/investor/${id}/verification`, updatedData);
+      await axios.patch(`${domain}/update-verification/${id}`, updatedData);
       alert('Verification details updated successfully');
       handleClose(); // Close the modal after submission
     } catch (error) {
