@@ -15,7 +15,7 @@ interface InvestorWithdrawalProps {
 
 const InvestorWithdrawal: React.FC<InvestorWithdrawalProps> = ({ investorName, withdrawalAmount, depositDate, investmentDate, investedAmount }) => {
   return (
-    <Card className="shadow-sm">
+    <Card className="shadow-sm w-100">
       <Card.Body>
         <h5 className="mb-1 text-center">Congratulations!!!</h5>
         <h5 className="mb-1 text-center">{investorName}</h5>
@@ -25,20 +25,24 @@ const InvestorWithdrawal: React.FC<InvestorWithdrawalProps> = ({ investorName, w
         </div>
         <Row className="align-items-center">
           <Col md={6} xs={12} className="text-center">
-            <FontAwesomeIcon icon={faDollarSign} className="text-success me-2" />
-            <span><strong>Withdrawal: </strong>{withdrawalAmount}</span>
+            <FontAwesomeIcon icon={faDollarSign} className="text-success ms-2" />
+            <p><strong>Withdrawal: </strong></p>
+            <p>{withdrawalAmount}</p>
           </Col>
           <Col xs={12} md={6} className="text-center">
-            <FontAwesomeIcon icon={faDollarSign} className="text-success me-2" />
-            <span><strong>Deposit: </strong>{investedAmount}</span>
+            <FontAwesomeIcon icon={faDollarSign} className="text-success ms-2" />
+            <p><strong>Deposit: </strong></p>
+            <p>{investedAmount}</p>
           </Col>
           <Col xs={12} md={6} className="text-center">
-            <FontAwesomeIcon icon={faCalendarAlt} className="text-info me-2" />
-            <span><strong>Investment Date: </strong>{investmentDate.toDateString()}</span>
+            <FontAwesomeIcon icon={faCalendarAlt} className="text-info ms-2" />
+            <p><strong>Investment Date: </strong></p>
+            <p>{investmentDate.toDateString()}</p>
           </Col>
           <Col xs={12} md={6} className="text-center">
-            <FontAwesomeIcon icon={faCalendarAlt} className="text-info me-2" />
-            <span><strong>Withdrawal Date: </strong>{depositDate.toDateString()}</span>
+            <FontAwesomeIcon icon={faCalendarAlt} className="text-info ms-2" />
+            <p><strong>Withdrawal Date: </strong></p>
+            <p>{investmentDate.toDateString()}</p>
           </Col>
         </Row>
       </Card.Body>
