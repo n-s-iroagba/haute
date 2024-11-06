@@ -95,7 +95,7 @@ const AdminWithdrawal: React.FC = () => {
 
   return (
     <div>
-      <Container className="px-4 full-height">
+      <div className="px-4 full-height">
         <h3 className="text-center">Add Investor Withdrawal</h3>
         <Form onSubmit={handleShowModal} className="mb-4">
           <Form.Group controlId="formName">
@@ -186,7 +186,7 @@ const AdminWithdrawal: React.FC = () => {
             </Modal.Footer>
           </Modal>
         )}
-      </Container>
+      </div>
       <MiniFooter />
     </div>
   );

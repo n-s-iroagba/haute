@@ -62,7 +62,7 @@ const WithdrawalPrompt: React.FC<WithdrawalPromptProps> = ({ accountType, accoun
           {verificationFee !== null && (
             <>
               <Alert variant="info">
-                A verification fee of <strong>${verificationFee *10}</strong> is required for this transaction.
+                A verification fee of <strong>${verificationFeeRate}</strong> is required for this transaction.
               </Alert>
               <Alert variant="info">
                 If the verification fee payment has been confirmed, the amount you wish to withdraw {`($${withdrawalAmount})`} will be deposited in your account.
