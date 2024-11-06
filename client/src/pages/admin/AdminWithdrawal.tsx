@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../common/styles/styles.css';
-import { Card, Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
+import { Card,Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faCalendarAlt, faCheck } from '@fortawesome/free-solid-svg-icons';
 import MiniFooter from '../../common/components/MiniFooter';
