@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           <TickerTape colorTheme="light" />
           <Introduction />
           <SecurityAssurance />
-          <a href="https://t.me/Austinmiller_tme" target="_blank" rel="noopener noreferrer">
+{/*           <a href="https://t.me/Austinmiller_tme" target="_blank" rel="noopener noreferrer">
           <div className="telegram-icon">
           <div className="px-2 py-2 d-flex flex-column align-items-center bg-light">
           <small className="text-center">Need Help ?</small>
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
         
           </div>
           </div>
-          </a>
+          </a> */}
           <Counter />
           <Testimonial />
           <Awards />
