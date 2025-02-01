@@ -19,8 +19,8 @@ import PromoAdvert from "../../features/home/layout/PromoAdvert";
 import NavbarComponent from "../../common/components/NavbarComponent";
 import useAppLoaded from "./hooks/useApploaded";
 import LoadingSpinner from "../../common/components/LoadingSpinner";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTelegram } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 
 const Home: React.FC = () => {
 
